@@ -23,7 +23,6 @@ namespace DisabledComputerFixAndReport {
 
         private void Form1_Load(object sender, EventArgs e) {
 
-            
 
         }
 
@@ -45,22 +44,13 @@ namespace DisabledComputerFixAndReport {
             string[] propertiesToDisplay = { "cn" };
 
             //Setup the array list for the results
-            ArrayList results = new ArrayList();
+            List<List<string>> results = new List<List<string>>();
 
             //Reach out to the ADMethods class to return into Array List
-            results = ADMethods.getADComputer(propertiesToSearch);
+            results = CommonMethods.getADComputer(propertiesToSearch);
 
-            //To display results, iterate through each dict in the array list and
-            //display the results located in propertiesToDisplay
-            foreach(IDictionary result in results) {
-
-                string resultString = "";
-                foreach(string property in propertiesToDisplay) {
-                    resultString += $"{property}: {result[property].ToString()} | ";
-                }
-                outputRichTextBox.AppendText(resultString + "\n");
-                resultString = "";
-            }
+            //Populate the List View
+            CommonMethods.populateListView(outputListView, propertiesToSearch, results);
 
         }
 
@@ -74,10 +64,11 @@ namespace DisabledComputerFixAndReport {
 
         private void clearAllButton_Click(object sender, EventArgs e) {
 
+            //Clear all textboxs/rich textboxes/list views/arrays
             propertyTextbox.Text = "";
-            outputRichTextBox.Text = "";
             propertiesToSearchRichTextbox.Text = "";
             propertiesToSearch.Clear();
+            outputListView.Clear();
 
         }
     }

@@ -24,11 +24,12 @@
         /// </summary>
         private void InitializeComponent() {
             this.runScanButton = new System.Windows.Forms.Button();
-            this.outputRichTextBox = new System.Windows.Forms.RichTextBox();
             this.addToListButton = new System.Windows.Forms.Button();
             this.propertyTextbox = new System.Windows.Forms.TextBox();
             this.propertiesToSearchRichTextbox = new System.Windows.Forms.RichTextBox();
             this.clearAllButton = new System.Windows.Forms.Button();
+            this.outputListView = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // runScanButton
@@ -40,15 +41,6 @@
             this.runScanButton.Text = "Run";
             this.runScanButton.UseVisualStyleBackColor = true;
             this.runScanButton.Click += new System.EventHandler(this.runScanButton_Click);
-            // 
-            // outputRichTextBox
-            // 
-            this.outputRichTextBox.Location = new System.Drawing.Point(12, 41);
-            this.outputRichTextBox.Name = "outputRichTextBox";
-            this.outputRichTextBox.Size = new System.Drawing.Size(776, 397);
-            this.outputRichTextBox.TabIndex = 1;
-            this.outputRichTextBox.Text = "";
-            this.outputRichTextBox.WordWrap = false;
             // 
             // addToListButton
             // 
@@ -86,16 +78,35 @@
             this.clearAllButton.UseVisualStyleBackColor = true;
             this.clearAllButton.Click += new System.EventHandler(this.clearAllButton_Click);
             // 
+            // outputListView
+            // 
+            this.outputListView.HideSelection = false;
+            this.outputListView.Location = new System.Drawing.Point(12, 229);
+            this.outputListView.Name = "outputListView";
+            this.outputListView.Size = new System.Drawing.Size(776, 209);
+            this.outputListView.TabIndex = 6;
+            this.outputListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 207);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ListView:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1163, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.outputListView);
             this.Controls.Add(this.clearAllButton);
             this.Controls.Add(this.propertiesToSearchRichTextbox);
             this.Controls.Add(this.propertyTextbox);
             this.Controls.Add(this.addToListButton);
-            this.Controls.Add(this.outputRichTextBox);
             this.Controls.Add(this.runScanButton);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -108,11 +119,12 @@
         #endregion
 
         private System.Windows.Forms.Button runScanButton;
-        private System.Windows.Forms.RichTextBox outputRichTextBox;
         private System.Windows.Forms.Button addToListButton;
         private System.Windows.Forms.TextBox propertyTextbox;
         private System.Windows.Forms.RichTextBox propertiesToSearchRichTextbox;
         private System.Windows.Forms.Button clearAllButton;
+        private System.Windows.Forms.ListView outputListView;
+        private System.Windows.Forms.Label label1;
     }
 }
 
