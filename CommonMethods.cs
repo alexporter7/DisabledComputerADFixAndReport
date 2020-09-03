@@ -14,6 +14,7 @@ namespace DisabledComputerFixAndReport {
 
             //Search using the global wildcard defined in application settings
             string computerNameString = DisabledComputerFixAndReport.Properties.Settings.Default.globalWildcard;
+
             //computerNameString = "DTC6GZW0X2";
 
             //Set the AD Path to search in (using the entire directory)

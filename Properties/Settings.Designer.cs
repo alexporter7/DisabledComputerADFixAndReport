@@ -23,16 +23,19 @@ namespace DisabledComputerFixAndReport.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("DTC*")]
         public string globalWildcard {
             get {
                 return ((string)(this["globalWildcard"]));
             }
+            set {
+                this["globalWildcard"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
             "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
@@ -40,6 +43,9 @@ namespace DisabledComputerFixAndReport.Properties {
         public global::System.Collections.Specialized.StringCollection defaultSearchProperties {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["defaultSearchProperties"]));
+            }
+            set {
+                this["defaultSearchProperties"] = value;
             }
         }
     }

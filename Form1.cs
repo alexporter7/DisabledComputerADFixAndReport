@@ -40,9 +40,6 @@ namespace DisabledComputerFixAndReport {
                 }
             }
 
-            //Setup properties to be displayed
-            string[] propertiesToDisplay = { "cn" };
-
             //Setup the array list for the results
             List<List<string>> results = new List<List<string>>();
 
@@ -56,9 +53,13 @@ namespace DisabledComputerFixAndReport {
 
         private void addToListButton_Click(object sender, EventArgs e) {
 
+            //Add the property to the display box & array
             string propertyToAppend = propertyTextbox.Text;
-            propertiesToSearchRichTextbox.AppendText(propertyToAppend);
+            propertiesToSearchRichTextbox.AppendText(propertyToAppend + "\n");
             propertiesToSearch.Add(propertyToAppend);
+
+            //Clear the textbox
+            propertyTextbox.Text = "";
 
         }
 
@@ -69,6 +70,28 @@ namespace DisabledComputerFixAndReport {
             propertiesToSearchRichTextbox.Text = "";
             propertiesToSearch.Clear();
             outputListView.Clear();
+
+        }
+
+        private void settingsButton_Click(object sender, EventArgs e) {
+
+            Options options = new Options();
+            options.ShowDialog();
+
+        }
+
+        private void propertyTextbox_KeyDown(object sender, KeyEventArgs e) {
+
+            //Check if Enter Key is pressed
+            if(e.KeyCode == Keys.Enter) {
+                //Add the property to the display box & array
+                string propertyToAppend = propertyTextbox.Text;
+                propertiesToSearchRichTextbox.AppendText(propertyToAppend + "\n");
+                propertiesToSearch.Add(propertyToAppend);
+
+                //Clear the textbox
+                propertyTextbox.Text = "";
+            }
 
         }
     }
